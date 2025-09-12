@@ -33,7 +33,8 @@ async def preco_papel_hig(preco: float,qtd: int, metros:int):
     cifrao = "R$"
 
     return {"Preço Total" : cifrao+ str(preco),
-            "Quantidade de rolos:": qtd,
+            "Quantidade de rolos": qtd,
+            "Preço por Pacote": cifrao+ str(round(preco_pacote ,3)),
             "Preço por metro": cifrao+ str(round(preco_metro,3)),
             "Preço por rolo": cifrao+ str(round(preco_rolo,3))
     }
