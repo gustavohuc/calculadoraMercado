@@ -46,3 +46,17 @@ async def preco_desconto(preco_original: float,preco_com_desconto: float ):
         "Valor Total": preco_original,
         "Porcentagem de desconto": str(round(porcentagem_desconto,2))+"%"
     }
+
+
+@app.get("/comparar_produtos/")
+async def comparar_produtos(preco1: float, qtd1: float, preco2: float, qtd2: float):
+    preco_unitario1 = preco1 / qtd1
+    preco_unitario2 = preco2 / qtd2
+
+    mais_barato = "Produto 1" if preco_unitario1 < preco_unitario2 else "Produto 2"
+
+    return {
+        "Produto 1 (preço unitário)": round(preco_unitario1, 3),
+        "Produto 2 (preço unitário)": round(preco_unitario2, 3),
+        "Mais vantajoso": mais_barato
+    }
