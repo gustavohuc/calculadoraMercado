@@ -38,3 +38,11 @@ async def preco_papel_hig(preco: float,qtd: int, metros:int):
             "Preço por metro": cifrao+ str(round(preco_metro,3)),
             "Preço por rolo": cifrao+ str(round(preco_rolo,3))
     }
+@app.get("/preco_desconto/")
+async def preco_desconto(preco_original: float,preco_com_desconto: float ):
+    valor_desconto= preco_original - preco_com_desconto
+    porcentagem_desconto = (valor_desconto/preco_original)*100
+    return{
+        "Valor Total": preco_original,
+        "Porcentagem de desconto": str(round(porcentagem_desconto,2))+"%"
+    }
