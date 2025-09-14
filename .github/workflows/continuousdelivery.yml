@@ -1,11 +1,11 @@
-name: Continuos Delivery
+name: Continuous Delivery
 on:
   push:
     branches:
       - main
 
 jobs:
-  docker:
+  dockerCD:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
