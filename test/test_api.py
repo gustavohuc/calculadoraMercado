@@ -14,7 +14,7 @@ def test_preco_unidade():
     assert response.status_code == 200
     assert data["quantidade"] == 2
     assert data["preço por Unidade"] == 5.0
-    assert data["preço total"] == 5.0
+    assert data["preço total"] == 10.0
 
 
 def test_preco_ovos():
