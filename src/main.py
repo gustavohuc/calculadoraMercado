@@ -9,7 +9,7 @@ def root():
 @app.get("/preco_unidade/")
 def preco_unidades(preco: float,qtd: int):
     preco_unitario = preco / qtd
-    return {"preço total":preco_unitario,
+    return {"preço total":preco,
             "quantidade": qtd,
             "preço por Unidade": round(preco_unitario,3)
     }
